@@ -254,7 +254,7 @@ export async function getShareValueOverTime(pairAddress, timestamps) {
     }
   }
 
-  // add eth prices
+  // add hoo prices
   let index = 0
   for (var brow in result?.data) {
     let timestamp = brow.split('b')[1]

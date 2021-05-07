@@ -68,7 +68,7 @@ const WarningWrapper = styled.div`
 `
 
 const WarningBanner = styled.div`
-  background-color: #ff6871;
+  background-color: #fd8e3e;
   padding: 1.5rem;
   color: white;
   width: 100%;

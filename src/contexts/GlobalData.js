@@ -214,7 +214,7 @@ export default function Provider({ children }) {
 
 /**
  * Gets all the global data for the overview page.
- * Needs current eth price and the old eth price to get
+ * Needs current hoo price and the old hoo price to get
  * 24 hour USD changes.
  * @param {*} ethPrice
  * @param {*} oldEthPrice

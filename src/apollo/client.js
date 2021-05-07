@@ -12,7 +12,7 @@ export const client = new ApolloClient({
 
 export const healthClient = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://h.hg.network/graphql',
+    uri: 'https://hh.hg.network/graphql',
   }),
   cache: new InMemoryCache(),
   shouldBatch: true,
