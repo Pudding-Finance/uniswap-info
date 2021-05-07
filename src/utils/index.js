@@ -40,13 +40,13 @@ export function getTimeframe(timeWindow) {
 export function getPoolLink(token0Address, token1Address = null, remove = false) {
   if (!token1Address) {
     return (
-      `https://uniswap.exchange/` +
+      `https://exchange.puddingswap.finance/` +
       (remove ? `remove` : `add`) +
       `/${token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'ETH' : token0Address}/${'ETH'}`
     )
   } else {
     return (
-      `https://uniswap.exchange/` +
+      `https://exchange.puddingswap.finance/` +
       (remove ? `remove` : `add`) +
       `/${token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'ETH' : token0Address}/${
         token1Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'ETH' : token1Address
@@ -57,9 +57,9 @@ export function getPoolLink(token0Address, token1Address = null, remove = false)
 
 export function getSwapLink(token0Address, token1Address = null) {
   if (!token1Address) {
-    return `https://uniswap.exchange/swap?inputCurrency=${token0Address}`
+    return `https://exchange.puddingswap.finance/swap?inputCurrency=${token0Address}`
   } else {
-    return `https://uniswap.exchange/swap?inputCurrency=${
+    return `https://exchange.puddingswap.finance/swap?inputCurrency=${
       token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'ETH' : token0Address
     }&outputCurrency=${token1Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'ETH' : token1Address}`
   }
@@ -303,10 +303,10 @@ export const setThemeColor = (theme) => document.documentElement.style.setProper
 export const Big = (number) => new BigNumber(number)
 
 export const urls = {
-  showTransaction: (tx) => `https://etherscan.io/tx/${tx}/`,
-  showAddress: (address) => `https://www.etherscan.io/address/${address}/`,
-  showToken: (address) => `https://www.etherscan.io/token/${address}/`,
-  showBlock: (block) => `https://etherscan.io/block/${block}/`,
+  showTransaction: (tx) => `https://hscscan.com/tx/${tx}/`,
+  showAddress: (address) => `https://www.hscscan.com/address/${address}/`,
+  showToken: (address) => `https://www.hscscan.com/token/${address}/`,
+  showBlock: (block) => `https://hscscan.com/block/${block}/`,
 }
 
 export const formatTime = (unix) => {

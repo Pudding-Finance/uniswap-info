@@ -153,8 +153,8 @@ const Chart = ({ data, chartOption, currencyUnit, symbol }) => {
               strokeWidth={2}
               dot={false}
               type="monotone"
-              name={'Total Liquidity' + (currencyUnit === 'USD' ? ' (USD)' : ' (ETH)')}
-              dataKey={currencyUnit === 'USD' ? 'usdLiquidity' : 'ethLiquidity'}
+              name={'Total Liquidity' + (currencyUnit === 'USD' ? ' (USD)' : ' (HOO)')}
+              dataKey={currencyUnit === 'USD' ? 'usdLiquidity' : 'hooLiquidity'}
               yAxisId={0}
               fill="var(--c-token)"
               opacity={'0.4'}
@@ -162,7 +162,7 @@ const Chart = ({ data, chartOption, currencyUnit, symbol }) => {
             />
             <Area
               type="monotone"
-              name={'Eth Balance'}
+              name={'Hoo Balance'}
               dataKey={'ethBalance'}
               fill="var(--c-token)"
               opacity={'0'}
