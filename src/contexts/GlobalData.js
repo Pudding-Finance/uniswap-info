@@ -262,30 +262,30 @@ async function getGlobalData(ethPrice, oldEthPrice) {
     })
     twoDayData = twoDayResult.data.uniswapFactories[0]
 
-    let oneWeekResult = await client.query({
-      query: GLOBAL_DATA(oneWeekBlock?.number),
-      fetchPolicy: 'cache-first',
-    })
-    const oneWeekData = oneWeekResult.data.uniswapFactories[0]
+    // let oneWeekResult = await client.query({
+    //   query: GLOBAL_DATA(oneWeekBlock?.number),
+    //   fetchPolicy: 'cache-first',
+    // })
+    // const oneWeekData = oneWeekResult.data.uniswapFactories[0]
 
-    let twoWeekResult = await client.query({
-      query: GLOBAL_DATA(twoWeekBlock?.number),
-      fetchPolicy: 'cache-first',
-    })
-    const twoWeekData = twoWeekResult.data.uniswapFactories[0]
+    // let twoWeekResult = await client.query({
+    //   query: GLOBAL_DATA(twoWeekBlock?.number),
+    //   fetchPolicy: 'cache-first',
+    // })
+    // const twoWeekData = twoWeekResult.data.uniswapFactories[0]
 
-    if (data && oneDayData && twoDayData && twoWeekData) {
+    if (data && oneDayData && twoDayData) {
       let [oneDayVolumeUSD, volumeChangeUSD] = get2DayPercentChange(
         data.totalVolumeUSD,
         oneDayData.totalVolumeUSD,
         twoDayData.totalVolumeUSD
       )
 
-      const [oneWeekVolume, weeklyVolumeChange] = get2DayPercentChange(
-        data.totalVolumeUSD,
-        oneWeekData.totalVolumeUSD,
-        twoWeekData.totalVolumeUSD
-      )
+      // const [oneWeekVolume, weeklyVolumeChange] = get2DayPercentChange(
+      //   data.totalVolumeUSD,
+      //   oneWeekData.totalVolumeUSD,
+      //   twoWeekData.totalVolumeUSD
+      // )
 
       const [oneDayTxns, txnChange] = get2DayPercentChange(
         data.txCount,
@@ -302,8 +302,8 @@ async function getGlobalData(ethPrice, oldEthPrice) {
 
       // add relevant fields with the calculated amounts
       data.oneDayVolumeUSD = oneDayVolumeUSD
-      data.oneWeekVolume = oneWeekVolume
-      data.weeklyVolumeChange = weeklyVolumeChange
+      // data.oneWeekVolume = oneWeekVolume
+      // data.weeklyVolumeChange = weeklyVolumeChange
       data.volumeChangeUSD = volumeChangeUSD
       data.liquidityChangeUSD = liquidityChangeUSD
       data.oneDayTxns = oneDayTxns
