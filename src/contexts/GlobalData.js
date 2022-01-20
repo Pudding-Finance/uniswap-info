@@ -235,10 +235,7 @@ async function getGlobalData(ethPrice, oldEthPrice) {
     // const utcTwoWeeksBack = utcCurrentTime.subtract(2, 'week').unix()
 
     // get the blocks needed for time travel queries
-    let [oneDayBlock, twoDayBlock] = await getBlocksFromTimestamps([
-      utcOneDayBack,
-      utcTwoDaysBack,
-    ])
+    let [oneDayBlock, twoDayBlock] = await getBlocksFromTimestamps([utcOneDayBack, utcTwoDaysBack])
 
     // fetch the global data
     let result = await client.query({
@@ -346,7 +343,7 @@ const getChartData = async (oldestDateToFetch, offsetData) => {
       }
     }
 
-    if (data) {
+    if (data && data.length > 0) {
       let dayIndexSet = new Set()
       let dayIndexArray = []
       const oneDay = 24 * 60 * 60
