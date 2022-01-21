@@ -765,7 +765,7 @@ export const TOKENS_DYNAMIC = (block) => {
   const queryString = `
     ${TokenFields}
     query tokens {
-      tokens(block: {number: ${block}} first: 200, orderBy: tradeVolumeUSD, orderDirection: desc) {
+      tokens(${block ? `block: {number: ${block}}` : ''} first: 200, orderBy: tradeVolumeUSD, orderDirection: desc) {
         ...TokenFields
       }
     }
